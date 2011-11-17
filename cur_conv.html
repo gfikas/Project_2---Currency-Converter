@@ -1,0 +1,156 @@
+<html>
+<head>
+<title>g_f's currency converter</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript">
+function validateForm() {
+	var x = document.forms["myForm"]["amount"].value;
+	if(x==null || x== "") {
+		alert("Error! Insert value to be converted!");
+		return false;
+	}
+	else if(isNaN(x)) {
+		alert("Error! Insert a NUMBER!");
+		return false;
+	}
+	else if(x<0) {
+		alert("Error! Value needs to be greater than 0!");
+		return false;
+	}
+}
+</script>
+<script>
+$(document).ready(function(){
+	$('#swap').click(function() { 
+		s2=$('#cur2').val();  
+	  	s1=$('#cur1').val();  
+	  	$('#cur2').val(s1);  
+	  	$('#cur1').val(s2); 
+	});
+});
+</script>
+</head>
+<body>
+
+<h1 align="center"><i>Live Currency Converter</i></h1>
+<hr />
+<form align="center" name="myForm" onsubmit="return validateForm()" method="GET" action="Convert.do">
+FROM: <select id="cur1" name="from_cur" size="1">
+	<option value="eur">Euro</option>
+	<option value="gbp">British Pound Sterling</option>
+	<option value="usd">US Dollar</option>
+	<option value="aed">United Arab Emirates Dirham</option>
+	<option value="ars">Argentine Peso</option>
+	<option value="aud">Australian Dollar</option>
+	<option value="bgn">Bulgarian Lev</option>
+	<option value="bnd">Brunei Dollar</option>
+	<option value="bob">Bolivian Boliviano</option>
+	<option value="brl">Brazilian Real</option>
+	<option value="cad">Canadian Dollar</option>
+	<option value="chf">Swiss Franc</option>
+	<option value="clp">Chilean Peso</option>
+	<option value="cny">Chinese Yuan Renminbi</option>
+	<option value="cop">Colombian Peso</option>
+	<option value="czk">Czech Republic Koruna</option>
+	<option value="dkk">Danish Krone</option>
+	<option value="egp">Egypt Pound</option>
+	<option value="fjd">Fijian Dollar</option>
+	<option value="hkd">Hong Kong Dollar</option>
+	<option value="hrk">Croatian Kuna</option>
+	<option value="huf">Hungarian Forint</option>
+	<option value="idr">Indonesian Rupiah</option>
+	<option value="ils">Israeli New Sheqel</option>
+	<option value="inr">Indian Rupee</option>
+	<option value="jpy">Japanese Yen</option>
+	<option value="kes">Kenyan Shilling</option>
+	<option value="krw">South Korean Won</option>
+	<option value="ltl">Lithuanian Litas</option>
+	<option value="mad">Moroccan Dirham</option>
+	<option value="mxn">Mexican Peso</option>
+	<option value="myr">Malaysian Ringgit</option>
+	<option value="nok">Norwegian Krone</option>
+	<option value="nzd">New Zealand Dollar</option>
+	<option value="pen">Peruvian Nuevo Sol</option>
+	<option value="php">Philippine Peso</option>
+	<option value="pkr">Pakistani Rupee</option>
+	<option value="pln">Polish Zloty</option>
+	<option value="ron">Romanian Leu</option>
+	<option value="rsd">Serbian Dinar</option>
+	<option value="rub">Russian Ruble</option>
+	<option value="sar">Saudi Riyal</option>
+	<option value="sek">Swedish Krona</option>
+	<option value="sgd">Singapore Dollar</option>
+	<option value="thb">Thai Baht</option>
+	<option value="try">Turkish Lira</option>
+	<option value="twd">New Taiwan Dollar</option>
+	<option value="uah">Ukrainian Hryvnia</option>
+	<option value="vef">Venezuelan BolÃ­Â­var Fuerte</option>
+	<option value="vnd">Vietnamese Dong</option>
+	<option value="zar">South African Ran</option>
+</select>
+<input type="text" name="amount" />
+TO: <select id="cur2" name="to_cur" size="1">
+	<option value="usd">US Dollar</option>
+	<option value="eur">Euro</option>
+	<option value="gbp">British Pound Sterling</option>
+	<option value="aed">United Arab Emirates Dirham</option>
+	<option value="ars">Argentine Peso</option>
+	<option value="aud">Australian Dollar</option>
+	<option value="bgn">Bulgarian Lev</option>
+	<option value="bnd">Brunei Dollar</option>
+	<option value="bob">Bolivian Boliviano</option>
+	<option value="brl">Brazilian Real</option>
+	<option value="cad">Canadian Dollar</option>
+	<option value="chf">Swiss Franc</option>
+	<option value="clp">Chilean Peso</option>
+	<option value="cny">Chinese Yuan Renminbi</option>
+	<option value="cop">Colombian Peso</option>
+	<option value="czk">Czech Republic Koruna</option>
+	<option value="dkk">Danish Krone</option>
+	<option value="egp">Egypt Pound</option>
+	<option value="fjd">Fijian Dollar</option>
+	<option value="hkd">Hong Kong Dollar</option>
+	<option value="hrk">Croatian Kuna</option>
+	<option value="huf">Hungarian Forint</option>
+	<option value="idr">Indonesian Rupiah</option>
+	<option value="ils">Israeli New Sheqel</option>
+	<option value="inr">Indian Rupee</option>
+	<option value="jpy">Japanese Yen</option>
+	<option value="kes">Kenyan Shilling</option>
+	<option value="krw">South Korean Won</option>
+	<option value="ltl">Lithuanian Litas</option>
+	<option value="mad">Moroccan Dirham</option>
+	<option value="mxn">Mexican Peso</option>
+	<option value="myr">Malaysian Ringgit</option>
+	<option value="nok">Norwegian Krone</option>
+	<option value="nzd">New Zealand Dollar</option>
+	<option value="pen">Peruvian Nuevo Sol</option>
+	<option value="php">Philippine Peso</option>
+	<option value="pkr">Pakistani Rupee</option>
+	<option value="pln">Polish Zloty</option>
+	<option value="ron">Romanian Leu</option>
+	<option value="rsd">Serbian Dinar</option>
+	<option value="rub">Russian Ruble</option>
+	<option value="sar">Saudi Riyal</option>
+	<option value="sek">Swedish Krona</option>
+	<option value="sgd">Singapore Dollar</option>
+	<option value="thb">Thai Baht</option>
+	<option value="try">Turkish Lira</option>
+	<option value="twd">New Taiwan Dollar</option>
+	<option value="uah">Ukrainian Hryvnia</option>
+	<option value="vef">Venezuelan BolÃ­Â­var Fuerte</option>
+	<option value="vnd">Vietnamese Dong</option>
+	<option value="zar">South African Ran</option>
+</select><br />
+<input type="SUBMIT" value="Convert" />
+<button id="swap" type="button">Swap</button>
+</form>
+<form align="right" method="GET" action="Info.do">
+<button id="report" type="SUBMIT" onclick="report">Info</button>
+</form>
+<form align="right" method="GET" action="Code.do">
+<input type="button" value="Code" onclick="window.location.href='http://gfikas.serveftp.com/Project_2/SourceCode.zip'">
+</form>
+
+</body>
+</html>
