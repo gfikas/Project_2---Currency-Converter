@@ -1,0 +1,43 @@
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+
+<servlet>
+   <servlet-name>Project1 Curr_Conv</servlet-name>
+   <servlet-class>com.example.web.CurrConv</servlet-class>
+</servlet>
+<servlet>
+   <servlet-name>Project2 Code_Return</servlet-name>
+   <servlet-class>com.example.web.CodeReturn</servlet-class>
+</servlet>
+<servlet>
+   <servlet-name>Project2 Info_Return</servlet-name>
+   <servlet-class>com.example.InfoReturn</servlet-class>
+</servlet>
+
+<servlet-mapping>
+   <servlet-name>Project1 Curr_Conv</servlet-name>
+   <url-pattern>/Convert.do</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+   <servlet-name>Project2 Code_Return</servlet-name>
+   <url-pattern>/Code.do</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+   <servlet-name>Project2 Info_Return</servlet-name>
+   <url-pattern>/Info.do</url-pattern>
+</servlet-mapping>
+
+<context-param>
+	<param-name>p2_report</param-name>
+	<param-value>http://gfikas.wordpress.com/2011/11/17/project_2-191111/</param-value>
+</context-param>
+
+<listener>
+	<listener-class>
+		com.example.MyServletContextListener
+	</listener-class>
+</listener>
+
+</web-app>
